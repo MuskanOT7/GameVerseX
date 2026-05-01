@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameVerseX - Game Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets\images\game-logo.png">
+</head>
+<body>
+    <div class="game-player">
+        <!-- <h2><a href="games.html" target="_blank" class="gameplayer">Game Player</h2></a> --> 
+        <iframe id="gameFrame" width="1480" height="720"></iframe>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const gameName = params.get('game');
+        if (gameName) {
+            const gamePath = 'collection/' + gameName + '/index.html';
+            document.getElementById('gameFrame').src = gamePath;
+        }
+    </script>
+</body>
+</html>

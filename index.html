@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameVerseX</title>
+
+  <!-- 
+    - Logo
+  -->
+  <link rel="icon" href="assets\images\game-logo.png">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+</head>
+
+<script>
+  function toggleContent(id, link) {
+    const content = document.getElementById(id);
+    const span = link.querySelector('.span');
+
+    if (content.style.display === "none") {
+      content.style.display = "block";
+      span.innerText = "Read Less";
+    } else {
+      content.style.display = "none";
+      span.innerText = "Read More";
+    }
+  }
+</script>
+
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+    // Always show the signup form by default
+    if (id === "signupModal") {
+      toggleForm("signup");
+    }
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  function toggleForm(formType) {
+    document.getElementById("signupForm").style.display = (formType === "signup") ? "block" : "none";
+    document.getElementById("loginForm").style.display = (formType === "login") ? "block" : "none";
+  }
+
+  // Optional: Close modal when clicking outside of it
+  window.onclick = function(event) {
+    let modals = document.getElementsByClassName('modal');
+    for (let i = 0; i < modals.length; i++) {
+      if (event.target == modals[i]) {
+        modals[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
+
+
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header">
+    <div class="header-bottom skewBg" data-header>
+      <div class="container">
+
+        <a href="#" class="logo">GameVerseX</a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+
+            <li class="navbar-item">
+              <a href="#home" class="navbar-link skewBg" data-nav-link>Home</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#live" class="navbar-link skewBg" data-nav-link>Live</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#features" class="navbar-link skewBg" data-nav-link>Features</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#blog" class="navbar-link skewBg" data-nav-link>Blog</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#contact" class="navbar-link skewBg" data-nav-link onclick="openModal('contactModal')">Contact</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="signup.html" class="navbar-link skewBg" data-nav-link target="_blank">Sign Up</a>
+
+            </li>
+        
+
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+
+          <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+            <ion-icon name="menu-outline" class="menu"></ion-icon>
+            <ion-icon name="close-outline" class="close"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home" aria-label="home"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./assets/images/image.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 58vh;
+        width: 100%;
+        color: white;
+        padding: 58px;">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">World Gaming</p>
+
+            <h1 class="h1 hero-title">
+              One Platform.<span class="span">Endless Games.</span>
+
+            </h1>
+
+            <p class="hero-text">
+              From puzzles to action — GameVerseX gives you access to top web games in one powerful hub.
+            </p>
+            <a href="about.html" >
+            <button class="btn skewBg">Read More</button>
+          </a>
+
+          </div>
+
+          <figure class="hero-banner img-holder" style="--width: 700; --height: 652;">
+            <!--<img src="./assets/images/hero-banner.png" width="700" height="700" alt="hero banner" class="w-100">-->
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+        <!-- 
+          - #LIVE MATCH
+        -->
+
+        <section class="section live-match" id="live" aria-label="live match">
+          <div class="container">
+
+            <h2 class="h2 section-title">
+              Watch Live <span class="span">Match</span>
+            </h2>
+
+            <figure class="live-match-banner img-holder" style="--width: 800; --height: 470;">
+
+              <img src="./assets/images/live-match-banner.jpg" width="800" height="470" loading="lazy"
+                alt="Live Match Video" class="img-cover">
+
+                <a href="https://www.twitch.tv/" target="_blank" class="play-btn" aria-label="Play video">
+                <ion-icon name="play"></ion-icon>
+                </a>
+
+            </figure>
+
+          </div>
+        </section>
+
+      </div>
+
+
+
+
+
+      <!-- 
+        - #FEATURED GAME
+      -->
+
+<section class="section featured-game" id="features">
+  <div class="container">
+
+    <h2 class="h2 section-title">
+      All Released <span class="span">Games</span>
+    </h2>
+
+    <!-- Screenshot Image -->
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;">
+
+    <div style="margin-top: 30px;">
+        <img src="icons/game-collection.png" alt="Game Collection"
+             style="width: 100%; max-width: 900px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: block; margin: 0 auto;">
+    </div>
+
+    <div style="margin-top: 25px;">
+        <a href="games.html" target="_blank" style="text-decoration: none;">
+            <button style="
+                background-color: #007bff;
+                color: white;
+                padding: 12px 25px;
+                border: none;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+            ">
+                Play Games
+            </button>
+        </a>
+    </div>
+
+</div>
+
+  </div>
+</section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" id="blog" aria-label="blog">
+        <div class="container">
+
+          <h2 class="h2 section-title">
+            Latest News & <span class="span">Articles</span>
+          </h2>
+
+          <p class="section-text">
+            Catch up on what's new and trending in the world of gaming on GameVerseX.
+          </p>
+
+          <ul class="blog-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 400; --height: 290;">
+                  <img src="./assets/images/BAFTA.png" width="400" height="290" loading="lazy"
+                    alt="Shooter Action Video" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="person-outline"></ion-icon>
+
+                      <a href="#" class="item-text">Admin</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                      <time datetime="2022-09-19" class="item-text">April 1, 2025</time>
+                    </li>
+
+                  </ul>
+
+                  <h3>
+                    <a href="javascript:void(0);" class="card-title">BAFTA Games Awards 2025 Highlights</a>
+                  </h3>
+                  
+                  <p class="card-text">
+                    The BAFTA Games Awards 2025 celebrated the most influential and outstanding games of the year.
+                  </p>
+                  
+                  <!-- Hidden Full Content -->
+                  <div id="bafta-full-content" style="display: none;" class="card-text">
+                    <p>
+                      This year's awards saw strong representation from British studios, with Senua's Saga: Hellblade II and Fable Reborn receiving multiple nominations.
+                      In a public vote, Shenmue (1999) was named the most influential game for its pioneering open-world elements. This year's awards saw strong representation from British studios, with Senua's Saga: Hellblade II leading with 11 nominations. Other notable titles included Still Wakes the Deep and Astro Bot, each receiving eight nominations. Astro Bot was favored for Best Game, though Balatro and Thank Goodness You're Here! were also strong contenders. Melina Juergens was tipped to win Best Performer for her portrayal in Hellblade II.
+                    </p>
+                  </div>
+                  
+                  <!-- Read More Toggle Link -->
+                  <a href="javascript:void(0);" class="card-link" onclick="toggleContent('bafta-full-content', this)">
+                    <span class="span">Read More</span>
+                    <ion-icon name="caret-forward"></ion-icon>
+                  </a>
+                  
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 400; --height: 290;">
+                  <img src="./assets/images/minecraft.png" width="400" height="290" loading="lazy" alt="The Walking Dead"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="person-outline"></ion-icon>
+
+                      <a href="#" class="item-text">Admin</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                      <time datetime="2022-09-19" class="item-text">April 1, 2025</time>
+                    </li>
+
+                  </ul>
+
+                  <h3>
+                    <a href="javascript:void(0);" class="card-title">A Minecraft Movie Easter Eggs and Tributes</a>
+                  </h3>
+
+                  <p class="card-text">
+                    A Minecraft Movie, which debuted on April 5, 2025, has become a massive box office success, grossing $301 million globally. 
+                  </p>
+
+                   <!-- Hidden Full Content -->
+                   <div id="minecraft-full-content" style="display: none;" class="card-text">
+                    <p>
+                    The film, starring Jack Black as Steve alongside Jason Momoa, Danielle Brooks, Sebastian Hansen, and Emma Myers, pays homage to the beloved Minecraft universe through several cleverly hidden Easter eggs. Notably, there's a tribute to Technoblade, a cherished Minecraft player who passed away in 2022, through the image of a crown-wearing pig. 
+                    </p>
+                  </div>
+                  
+                  <!-- Read More Toggle Link -->
+                  <a href="javascript:void(0);" class="card-link" onclick="toggleContent('minecraft-full-content', this)">
+                    <span class="span">Read More</span>
+                    <ion-icon name="caret-forward"></ion-icon>
+                  </a>
+
+                  <!-- More Blog Centered Link -->
+                  <div class="more-blog-link" >
+                    <a href="https://kotaku.com/">More Blog</a>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 400; --height: 290;">
+                  <img src="./assets/images/midnight.png" width="400" height="290" loading="lazy"
+                    alt="Defense Of The Ancients" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="person-outline"></ion-icon>
+
+                      <a href="#" class="item-text">Admin</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                      <time datetime="2022-09-19" class="item-text">April 1, 2025</time>
+                    </li>
+
+                  </ul>
+
+                  <h3>
+                    <a href="javascript:void(0);" class="card-title">South of Midnight</a>
+                  </h3>
+
+                  <p class="card-text">
+                    South of Midnight, a Southern Gothic-inspired action-adventure game, is set to launch on Xbox Game Pass on Tuesday, April 8, 2025, at 12 p.m.
+                  </p>
+
+                   <!-- Hidden Full Content -->
+                   <div id="midnight-full-content" style="display: none;" class="card-text">
+                    <p>
+                      However, only subscribers of the Xbox Game Pass Ultimate and Xbox Game Pass PC tiers will have access to it at launch; it will not be available to Xbox Game Pass Standard or Core subscribers initially. Players who preordered the premium edition of the game, which costs $49.99, received early access beginning April 3. 
+                    </p>
+                  </div>
+                  
+                  <!-- Read More Toggle Link -->
+                  <a href="javascript:void(0);" class="card-link" onclick="toggleContent('midnight-full-content', this)">
+                    <span class="span">Read More</span>
+                    <ion-icon name="caret-forward"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+       
+      </section>
+
+
+      <!-- Contact Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('contactModal')">&times;</span>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required><br>
+      <input type="email" name="email" placeholder="Your Email" required><br>
+      <textarea name="message" placeholder="Your Message" required></textarea><br>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+      <!-- 
+        - #NEWSLETTER
+      -->
+
+      <section class="newsletter" aria-label="newsletter">
+        <div class="container">
+
+          <div class="newsletter-card">
+
+            <h2 class="h2">
+              Our <span class="span">Newsletter</span>
+            </h2>
+
+            <form action="" class="newsletter-form">
+
+              <div class="input-wrapper skewBg">
+                <input type="email" name="email_address" aria-label="email" placeholder="Enter your email..." required
+                  class="email-field">
+
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <button type="submit" class="btn newsletter-btn skewBg">
+                <span class="span">Subscribe</span>
+
+                <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">GameVerseX</a>
+
+          <p class="footer-text">
+            GameVerseX is your ultimate hub for thrilling games, exciting news, and an epic player community — dive into the next level of gaming today!
+          </p>
+
+          <ul class="contact-list">
+
+            <li class="contact-item">
+              <div class="contact-icon">
+                <ion-icon name="location"></ion-icon>
+              </div>
+
+              <address class="item-text">
+                Address : PO Box W75 Street lan West new queens
+              </address>
+            </li>
+
+            <li class="contact-item">
+              <div class="contact-icon">
+                <ion-icon name="headset"></ion-icon>
+              </div>
+
+              <a href="tel:+241245654235" class="item-text">Phone : +24 1245 654 235</a>
+            </li>
+
+            <li class="contact-item">
+              <div class="contact-icon">
+                <ion-icon name="mail-open"></ion-icon>
+              </div>
+
+              <a href="mailto:info@exemple.com" class="item-text">Email : info@exemple.com</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Need Help?</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; All Right Reserved by <a href="javascript:void(0);" class="copyright-link">GameVerseX, 2025</a>
+        </p>
+
+        <img src="./assets/images/footer-bottom-img.png" width="340" height="21" loading="lazy" alt=""
+          class="footer-bottom-img">
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="caret-up"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  
+
+</body>
+
+</html>
